@@ -6,8 +6,14 @@ import (
 )
 
 func main() {
-	firstName := flag.String("word", "default value", "description")
-	age := flag.Int("age", 23, "age of user")
+	// flags definition
+	name := flag.String("name", "World", "a name to say hello to")
+	age := flag.Int("age", 0, "your age")
+
+	// parse flags
 	flag.Parse()
-	fmt.Println("name", *firstName, *age)
+
+	// use flags
+	fmt.Printf("Hello, %s!\n", *name)
+	fmt.Printf("You are %d years old.\n", *age)
 }
